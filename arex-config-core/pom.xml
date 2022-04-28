@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>arex-config</artifactId>
-        <groupId>io.arex</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>com.arextest</groupId>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -29,7 +29,7 @@
             <artifactId>jackson-annotations</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.arex</groupId>
+            <groupId>com.arextest</groupId>
             <artifactId>arex-config-model</artifactId>
         </dependency>
         <dependency>

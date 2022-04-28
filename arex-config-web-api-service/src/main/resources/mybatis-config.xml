@@ -6,12 +6,12 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <typeAliases>
-        <package name="io.arex.config.core.repository.handler"/>
+        <package name="com.arextest.config.core.repository.handler"/>
     </typeAliases>
     <typeHandlers>
-        <package name="io.arex.config.core.repository.handler"/>
+        <package name="com.arextest.config.core.repository.handler"/>
     </typeHandlers>
     <mappers>
-        <package name="io.arex.config.core.repository.mapper"/>
+        <package name="com.arextest.config.core.repository.mapper"/>
     </mappers>
 </configuration>

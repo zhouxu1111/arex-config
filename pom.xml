@@ -3,10 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.arex</groupId>
+    <groupId>com.arextest</groupId>
     <artifactId>arex-config</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <modules>
         <module>arex-config-model</module>
         <module>arex-config-web-api-service</module>
@@ -21,12 +21,6 @@
         <lombok.version>1.18.2</lombok.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <releases.repo>
-            http://maven.release.ctripcorp.com/nexus/content/repositories/flightrelease
-        </releases.repo>
-        <snapshots.repo>
-            http://maven.release.ctripcorp.com/nexus/content/repositories/flightsnapshot
-        </snapshots.repo>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,7 +70,6 @@
                 <groupId>org.jmockit</groupId>
                 <artifactId>jmockit</artifactId>
                 <version>${jmockit.version}</version>
-                <!--不能省略，否则项目在进行validate时可能会出现重复类-->
                 <scope>test</scope>
             </dependency>
             <!-- test -->
@@ -87,12 +80,12 @@
                 <scope>test</scope>
             </dependency>
             <dependency>
-                <groupId>io.arex</groupId>
+                <groupId>com.arextest</groupId>
                 <artifactId>arex-config-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>io.arex</groupId>
+                <groupId>com.arextest</groupId>
                 <artifactId>arex-config-core</artifactId>
                 <version>${project.version}</version>
             </dependency>

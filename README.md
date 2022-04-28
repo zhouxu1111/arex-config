@@ -9,7 +9,7 @@
  * The `value` of appId assigned from your argument of **AREX's Agent** which named `-Darex.service.name`, empty not allowed. 
  * The `Application` in your organization should be included additional properties such as: name, owners,description,the name of team,etc.
  
- Therefore, all the configuration based on `appId` provides as following:
+ Therefore, all the configurations are based on `appId` and provides as following:
  
    1. The compare configuration for response diff,such as: skip a path to ignore
    1. The collect configuration for `AREX's Agent` record,such as: Qps of recording
