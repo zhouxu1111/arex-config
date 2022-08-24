@@ -39,7 +39,7 @@ public interface RepositoryProvider<T> {
         return true;
     }
 
-    default int count(String appId) {
+    default long count(String appId) {
         return 0;
     }
 }

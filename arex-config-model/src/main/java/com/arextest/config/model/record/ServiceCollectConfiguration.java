@@ -1,6 +1,7 @@
 package com.arextest.config.model.record;
 
 import com.arextest.config.model.AbstractConfiguration;
+import com.arextest.config.model.dao.mongodb.RecordServiceConfigCollection;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 
 /**
  * @author jmo
+ * @see RecordServiceConfigCollection
  * @since 2021/12/21
  */
 @Setter
