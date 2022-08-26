@@ -62,13 +62,15 @@ public final class ApplicationServiceConfigurableHandler extends AbstractConfigu
             serviceConfiguration.setServiceKey(originService.getServiceKey());
             serviceConfiguration.setServiceName(originService.getServiceName());
             serviceConfiguration.setStatus(StatusType.NORMAL.getMask());
-            sourceOperationList = originService.getOperationList();
-            if (super.insert(serviceConfiguration) && CollectionUtils.isNotEmpty(sourceOperationList)) {
-                this.buildOperationList(serviceConfiguration, sourceOperationList);
-                operationConfigurableHandler.insertList(serviceConfiguration.getOperationList());
-                LOGGER.info("add {} service's operations size:{}", originService.getServiceName(),
-                        sourceOperationList.size());
-            }
+            // sourceOperationList = originService.getOperationList();
+            // if (super.insert(serviceConfiguration) && CollectionUtils.isNotEmpty(sourceOperationList)) {
+            //     this.buildOperationList(serviceConfiguration, sourceOperationList);
+            //     operationConfigurableHandler.insertList(serviceConfiguration.getOperationList());
+            //     LOGGER.info("add {} service's operations size:{}", originService.getServiceName(),
+            //             sourceOperationList.size());
+            // }
+            boolean insert = super.insert(serviceConfiguration);
+            LOGGER.info("add {} service: {}", serviceConfiguration.getServiceName(), insert);
         }
     }
 

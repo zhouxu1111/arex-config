@@ -64,9 +64,9 @@ public final class Providers {
             serviceConfiguration.setAppId(appId);
             serviceConfiguration.setServiceName("unknown service name");
             serviceConfiguration.setServiceKey("unknown service key");
-            String url = "http://" + host + "/actuator/mappings";
-            List<OperationDescription> operationDescriptionList = getOperationDescriptionList(url);
-            serviceConfiguration.setOperationList(operationDescriptionList);
+            // String url = "http://" + host + "/actuator/mappings";
+            // List<OperationDescription> operationDescriptionList = getOperationDescriptionList(url);
+            // serviceConfiguration.setOperationList(operationDescriptionList);
             return Collections.singletonList(serviceConfiguration);
         }
 
