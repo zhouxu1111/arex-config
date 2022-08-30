@@ -5,13 +5,13 @@
  Before better understanding what functions can the **AREX's Config Service** provide,
  you should first know a basic concept of `AppId`:
  
- * **AppId** which is a unique identification of your `Application`.
- * The `value` of appId assigned from your argument of **AREX's Agent** which named `-Darex.service.name`, empty not allowed. 
- * The `Application` in your organization should be included additional properties such as: name, owners,description,the name of team,etc.
+ * **AppId** is a unique identification of your `Application`.
+ * The `value` of appId is assigned with the command line argument of **AREX's Agent** named `-Darex.service.name`, which is required. 
+ * The `Application` in your organization should be included additional properties such as: name, owners, description, the name of team, etc.
  
  Therefore, all the configurations are based on `appId` and provides as following:
  
-   1. The compare configuration for response diff,such as: skip a path to ignore
+   1. The compare configuration for response diff, such as: skip a path to ignore
    1. The collect configuration for `AREX's Agent` record,such as: Qps of recording
    1. The replay configuration for schedule, such as: max Qps to send
    1. The dynamic configuration for for `AREX's Agent` record and replay
