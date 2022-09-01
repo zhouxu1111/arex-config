@@ -69,7 +69,7 @@ public final class AgentRemoteConfigurationController {
             return ResponseUtils.resourceNotFoundResponse();
         }
         ServiceCollectConfiguration serviceCollectConfiguration = serviceCollectHandler.useResult(appId);
-        this.delayUpdateApplicationService(request);
+        applicationServiceHandler.createOrUpdate(request.getAppId(), request.getHost());
         AgentRemoteConfigurationResponse body = new AgentRemoteConfigurationResponse();
         body.setDynamicClassConfigurationList(dynamicClassHandler.useResultAsList(appId));
         body.setServiceCollectConfiguration(serviceCollectConfiguration);

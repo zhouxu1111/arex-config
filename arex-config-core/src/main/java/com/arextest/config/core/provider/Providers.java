@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.ServiceLoader;
 import java.util.Set;
 
@@ -38,7 +39,7 @@ public final class Providers {
 
     public static ApplicationServiceDescriptionProvider createApplicationService(String name) {
         if (StringUtils.isEmpty(name)) {
-            return new SpringActuatorMappingProviderImpl();
+            return new DefaultServiceDescriptionProviderImpl();
         }
         return lookup(ApplicationServiceDescriptionProvider.class, name);
     }
@@ -55,6 +56,27 @@ public final class Providers {
         return null;
     }
 
+    private static final class DefaultServiceDescriptionProviderImpl implements ApplicationServiceDescriptionProvider {
+
+        @Override
+        public List<? extends ServiceDescription> get(String appId, String host) {
+            DefaultServiceDescriptionImpl serviceConfiguration = new DefaultServiceDescriptionImpl();
+            serviceConfiguration.setAppId(appId);
+            serviceConfiguration.setServiceName("unknown service name");
+            serviceConfiguration.setServiceKey("unknown service key");
+            return Collections.singletonList(serviceConfiguration);
+        }
+
+        @Data
+        private static final class DefaultServiceDescriptionImpl implements ServiceDescription {
+            private String serviceCode;
+            private String serviceName;
+            private String serviceKey;
+            private List<? extends OperationDescription> operationList;
+            private String appId;
+        }
+    }
+
     private static final class SpringActuatorMappingProviderImpl implements ApplicationServiceDescriptionProvider {
         private static final RestTemplate restTemplate = new RestTemplate();
 
@@ -64,9 +86,9 @@ public final class Providers {
             serviceConfiguration.setAppId(appId);
             serviceConfiguration.setServiceName("unknown service name");
             serviceConfiguration.setServiceKey("unknown service key");
-            // String url = "http://" + host + "/actuator/mappings";
-            // List<OperationDescription> operationDescriptionList = getOperationDescriptionList(url);
-            // serviceConfiguration.setOperationList(operationDescriptionList);
+            String url = "http://" + host + "/actuator/mappings";
+            List<OperationDescription> operationDescriptionList = getOperationDescriptionList(url);
+            serviceConfiguration.setOperationList(operationDescriptionList);
             return Collections.singletonList(serviceConfiguration);
         }
 

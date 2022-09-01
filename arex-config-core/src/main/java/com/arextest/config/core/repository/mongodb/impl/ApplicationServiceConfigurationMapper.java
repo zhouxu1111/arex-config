@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Repository
-public class ApplicationServiceConfigurationMapper implements RepositoryProvider<ApplicationServiceConfiguration>,RepositoryField {
+public class ApplicationServiceConfigurationMapper implements RepositoryProvider<ApplicationServiceConfiguration>, RepositoryField {
 
     @Autowired
     MongoTemplate mongoTemplate;
@@ -65,7 +65,7 @@ public class ApplicationServiceConfigurationMapper implements RepositoryProvider
     public boolean insert(ApplicationServiceConfiguration configuration) {
         ServiceCollection serviceCollection = ServiceConvert.INSTANCE.daoFromDto(configuration);
         ServiceCollection insert = mongoTemplate.insert(serviceCollection);
-        if (insert.getId() != null){
+        if (insert.getId() != null) {
             configuration.setId(insert.getId());
         }
         return insert.getId() != null;
