@@ -37,7 +37,7 @@ public class ScheduleConfigurationMapper implements RepositoryProvider<ScheduleC
 
     @Override
     public List<ScheduleConfiguration> listBy(String appId) {
-        Query query = Query.query(Criteria.where(DASH_ID).is(appId));
+        Query query = Query.query(Criteria.where(APP_ID).is(appId));
         List<ReplayScheduleConfigCollection> replayScheduleConfigCollections = mongoTemplate.find(query, ReplayScheduleConfigCollection.class);
         return replayScheduleConfigCollections.stream().map(ReplayScheduleConfigConvert.INSTANCE::dtoFromDao).collect(Collectors.toList());
     }
