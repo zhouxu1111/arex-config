@@ -12,7 +12,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @Document(collection = "RecordServiceConfig")
-public class RecordServiceConfigCollection extends ModelBase {
+public class RecordServiceConfigCollection extends AbstractModelBase {
 
     @NonNull
     @Indexed(unique = true)
@@ -31,6 +31,8 @@ public class RecordServiceConfigCollection extends ModelBase {
     private Set<String> includeOperationSet;
 
     private int allowDayOfWeeks;
+
+    private boolean timeMock;
     @NonNull
     private String allowTimeOfDayFrom;
     @NonNull

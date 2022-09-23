@@ -34,6 +34,7 @@ final class ServiceCollectConfigurableHandler extends AbstractConfigurableHandle
         serviceCollectConfiguration.setAppId(appId);
         serviceCollectConfiguration.setSampleRate(globalDefaultConfiguration.getSampleRate());
         serviceCollectConfiguration.setAllowDayOfWeeks(globalDefaultConfiguration.getAllowDayOfWeeks());
+        serviceCollectConfiguration.setTimeMock(globalDefaultConfiguration.isTimeMock());
         serviceCollectConfiguration.setAllowTimeOfDayFrom(globalDefaultConfiguration.getAllowTimeOfDayFrom());
         serviceCollectConfiguration.setAllowTimeOfDayTo(globalDefaultConfiguration.getAllowTimeOfDayTo());
         return Collections.singletonList(serviceCollectConfiguration);

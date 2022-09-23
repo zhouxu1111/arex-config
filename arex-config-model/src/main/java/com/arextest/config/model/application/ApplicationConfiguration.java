@@ -14,6 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ApplicationConfiguration extends AbstractConfiguration implements ApplicationDescription {
+    private String id;
     private String appId;
     /**
      * Bit flag composed of bits that indicate which {@link FeatureType}s are enabled.

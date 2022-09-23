@@ -25,9 +25,6 @@ final class DynamicClassConfigurableHandler extends AbstractConfigurableHandler<
         if (StringUtils.isEmpty(configuration.getFullClassName())) {
             return false;
         }
-        if (StringUtils.isEmpty(configuration.getMethodName())) {
-            return false;
-        }
         return super.insert(configuration);
     }
 }

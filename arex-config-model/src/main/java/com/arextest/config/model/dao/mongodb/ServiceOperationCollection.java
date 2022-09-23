@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @Document(collection = "ServiceOperation")
-public class ServiceOperationCollection extends ModelBase {
+public class ServiceOperationCollection extends AbstractModelBase {
     @NonNull
     private String appId;
     @NonNull

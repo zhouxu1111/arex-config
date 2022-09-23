@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @Document(collection = "DynamicClass")
-public class DynamicClassCollection extends ModelBase {
+public class DynamicClassCollection extends AbstractModelBase {
 
     @NonNull
     private String appId;

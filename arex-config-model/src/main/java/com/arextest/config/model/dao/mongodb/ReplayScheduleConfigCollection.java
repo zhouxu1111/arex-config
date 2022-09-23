@@ -12,7 +12,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @Document(collection = "ReplayScheduleConfig")
-public class ReplayScheduleConfigCollection extends ModelBase {
+public class ReplayScheduleConfigCollection extends AbstractModelBase {
 
     @NonNull
     @Indexed(unique = true)

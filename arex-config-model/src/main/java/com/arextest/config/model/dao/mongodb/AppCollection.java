@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @Document(collection = "App")
-public class AppCollection extends ModelBase {
+public class AppCollection extends AbstractModelBase {
     @NonNull
     @Indexed(unique = true)
     private String appId;

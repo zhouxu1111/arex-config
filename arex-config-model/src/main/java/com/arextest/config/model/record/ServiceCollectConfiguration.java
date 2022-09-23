@@ -46,12 +46,16 @@ public class ServiceCollectConfiguration extends AbstractConfiguration {
      */
     private Set<String> includeOperationSet;
     /**
-     * Bit flag composed of bits that indicate which {@link java.time.DayOfWeek}s are enabled to recording.
-     * if the value is zero means everyday should be working,it is unlimited.
-     * for example:
-     * {@code private int allowDayOfWeeks=1<< DayOfWeek.MONDAY.getValue()}
+     * Bit flag composed of bits that indicate which day of the week are enabled to recording.
+     * Day of the week that enabled to recording indicates which bit is 1
+     * SUNDAY -> Saturday : the position of 0 -> the position of 6
      */
     private int allowDayOfWeeks;
+    /**
+     * the switch that controls the time class mock
+     * if timeMock is true, means agent will mock the classes of time such as java.time.Instant(now)
+     */
+    private boolean timeMock;
     /**
      * HH:mm  example: 00:01
      */

@@ -2,8 +2,8 @@ package com.arextest.config.core.repository.mongodb.impl;
 
 import com.arextest.config.core.repository.RepositoryProvider;
 import com.arextest.config.core.repository.mongodb.impl.util.MongoHelper;
-import com.arextest.config.model.dao.mongodb.RecordServiceConfigCollection;
 import com.arextest.config.model.convert.RecordServiceConfigConvert;
+import com.arextest.config.model.dao.mongodb.RecordServiceConfigCollection;
 import com.arextest.config.model.record.ServiceCollectConfiguration;
 import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
@@ -29,6 +29,7 @@ public class ServiceCollectConfigurationMapper implements RepositoryProvider<Ser
     private static final String ALLOW_DAY_OF_WEEKS = "allowDayOfWeeks";
     private static final String ALLOW_TIME_OF_DAY_FROM = "allowTimeOfDayFrom";
     private static final String ALLOW_TIME_OF_DAY_TO = "allowTimeOfDayTo";
+    private static final String TIME_MOCK = "timeMock";
 
     @Autowired
     MongoTemplate mongoTemplate;
@@ -62,6 +63,7 @@ public class ServiceCollectConfigurationMapper implements RepositoryProvider<Ser
         update.set(ALLOW_DAY_OF_WEEKS, configuration.getAllowDayOfWeeks());
         update.set(ALLOW_TIME_OF_DAY_FROM, configuration.getAllowTimeOfDayFrom());
         update.set(ALLOW_TIME_OF_DAY_TO, configuration.getAllowTimeOfDayTo());
+        update.set(TIME_MOCK, configuration.isTimeMock());
         UpdateResult updateResult = mongoTemplate.updateMulti(query, update, RecordServiceConfigCollection.class);
         return updateResult.getModifiedCount() > 0;
     }
